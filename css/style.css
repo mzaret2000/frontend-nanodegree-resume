@@ -148,6 +148,9 @@ ul {
 
 img {
   padding: 10px;
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
 }
 
 /* Bar chart stuff */
