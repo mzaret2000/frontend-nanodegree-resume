@@ -37,12 +37,12 @@ var projects = {
 	{"title":"P1:Coffee Mug",
 	"dates":"January 2015",
 	"description":"Build a webpage from a mockup using boostrap framework.",
-	"image":"/Users/mikezaret/frontend-nanodegree-resume/images/mug.png"
+	"image":"images/mug.png"
 	},
 	{"title":"P2: Interactive Resume",
 	"dates":"February 2015",
 	"description":"Build an interactive webpage with JavaScript",
-	"image":"/Users/mikezaret/frontend-nanodegree-resume/images/p2.png"
+	"image":"images/p2.png"
 	}]
 };
 
@@ -50,7 +50,7 @@ var bio = {
 	"name":"Michael Zaret",
 	"role":"Web Developer",
 	"welcomeMessage":"Hi Michael Zaret, and I am learning to become a Front-End Web Developer",
-	"biopic":"/Users/mikezaret/frontend-nanodegree-resume/images/biopic.png",
+	"biopic":"images/biopic.png",
 	"contacts":contacts,
 	"skills":skills
 };
@@ -70,15 +70,15 @@ var education = {
 	"dates":"2015",
 	"url":"http://www.udacity.com/course/ud804"
 	},
-	{"title":"Intro to Computer Science",
-	"school":"Udacity",
-	"dates":"2013",
-	"url":"https://www.udacity.com/course/cs101"
-	},
 	{"title":"Build a Blog",
 	"school":"Udacity",
 	"dates":"2014",
 	"url":"https://www.udacity.com/course/cs253"
+	},
+	{"title":"Intro to Computer Science",
+	"school":"Udacity",
+	"dates":"2013",
+	"url":"https://www.udacity.com/course/cs101"
 	},
 	{"title":"Intro to Machine Learning",
 	"school":"Coursera",
@@ -189,20 +189,15 @@ contactWrap("#footerContacts");
 $("#mapDiv").append(googleMap);
 
 $(document).ready(function(){
-    $("#workExperience").children("h2").click(function(){
-        $(".work-entry").slideToggle();
+    $("#workExperience, #education").children("h2").click(function(){
+        $(".work-entry,.education-entry").slideToggle();
     });
 });
 
 $(document).ready(function(){
-    $("#education").children("h2").click(function(){
-        $(".education-entry").slideToggle();
-    });
-});
-
-$(document).ready(function(){
-    $("#projects").children("h2").click(function(){
-        $(".project-entry").slideToggle();
+    $(".project-entry").children("a").click(function(){
+    	$proj = $(this);
+    	$proj.siblings("img").slideToggle();
     });
 });
 
